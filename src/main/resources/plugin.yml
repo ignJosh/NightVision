@@ -6,3 +6,4 @@ description: NightVision Plugin
 commands:
   nightvision:
     aliases: [nv]
+  nvreload:

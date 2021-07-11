@@ -1,6 +1,7 @@
 package me.josh.nightvision;
 
 import lombok.Getter;
+import me.josh.nightvision.commands.ConfigReloadCommand;
 import me.josh.nightvision.commands.NightVisionCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +20,7 @@ public final class NightVision extends JavaPlugin {
 
     private void registerCommands(){
         getCommand("nightvision").setExecutor(new NightVisionCommand());
+        getCommand("nvreload").setExecutor(new ConfigReloadCommand());
     }
 
 
