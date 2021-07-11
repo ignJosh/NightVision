@@ -3,3 +3,6 @@ version: ${project.version}
 main: me.josh.nightvision.NightVision
 api-version: 1.16
 description: NightVision Plugin
+commands:
+  nightvision:
+    aliases: [nv]

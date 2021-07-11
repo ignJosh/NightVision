@@ -1,17 +1,29 @@
 package me.josh.nightvision;
 
+import lombok.Getter;
+import me.josh.nightvision.commands.NightVisionCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NightVision extends JavaPlugin {
 
+    @Getter private static NightVision instance;
+
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        instance = this;
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
+        registerCommands();
 
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+    private void registerCommands(){
+        getCommand("nightvision").setExecutor(new NightVisionCommand());
     }
+
+
+
+
+
+
 }

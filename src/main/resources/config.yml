@@ -1,0 +1,11 @@
+gui:
+  use: disabled
+  title: "&cNight Vision"
+
+permission:
+  require: false
+  node: "nightvision.use"
+
+messages:
+  enabled: "&aYou have enabled night vision"
+  disabled: "&cYou have disabled night vision"
