@@ -18,9 +18,22 @@ public class ConfigReloadCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
 
-        NightVision.getInstance().reloadConfig();
-        sender.sendMessage(CC.GREEN + "Reloaded config");
+        if (sender instanceof Player) {
+
+            Player player = (Player) sender;
+
+            if (player.hasPermission("nightvision.admin") || player.isOp()) {
+                NightVision.getInstance().reloadConfig();
+                player.sendMessage(CC.GREEN + "Reloaded config");
+            }else{
+                player.sendMessage(CC.RED + "No Permission");
+            }
+        } else {
+            NightVision.getInstance().reloadConfig();
+            sender.sendMessage(CC.GREEN + "Reloaded config");
+        }
 
         return false;
+
     }
 }
