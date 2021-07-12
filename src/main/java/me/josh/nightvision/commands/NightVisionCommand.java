@@ -78,6 +78,7 @@ public class NightVisionCommand implements CommandExecutor {
 
                 gui.show(player);
             } else {
+                /*
                 if (player.hasMetadata(API.nightVisionMeta)) {
                     API.takeNightVision(player, true);
                     player.sendMessage(CC.translate(NightVision.getInstance().getConfig().getString("messages.disabled")));
@@ -86,6 +87,10 @@ public class NightVisionCommand implements CommandExecutor {
                     API.giveNightVision(player, true);
                     player.sendMessage(CC.translate(NightVision.getInstance().getConfig().getString("messages.enabled")));
                 }
+                */
+                API.giveNightVision(player, !player.hasMetadata(API.nightVisionMeta)); // reversed
+                player.sendMessage(player.hasMetadata(API.nightVisionMeta) ? CC.translate(NightVision.getInstance().getConfig().getString("messages.disabled") : CC.translate(NightVision.getInstance().getConfig().getString("messages.enabled"));
+                
             }
 
         }
