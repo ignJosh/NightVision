@@ -17,6 +17,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * @author Josh Becconsall (https://github.com/ignJosh)
  * @Date 11/07/2021 19:38
+ * @Contributor Hit (https://github.com/hitthetarget55)
  */
 
 public class NightVisionCommand implements CommandExecutor {
@@ -89,7 +90,7 @@ public class NightVisionCommand implements CommandExecutor {
                 }
                 */
                 API.giveNightVision(player, !player.hasMetadata(API.nightVisionMeta)); // reversed
-                player.sendMessage(player.hasMetadata(API.nightVisionMeta) ? CC.translate(NightVision.getInstance().getConfig().getString("messages.disabled") : CC.translate(NightVision.getInstance().getConfig().getString("messages.enabled"));
+                player.sendMessage(player.hasMetadata(API.nightVisionMeta) ? CC.translate(NightVision.getInstance().getConfig().getString("messages.disabled")) : CC.translate(NightVision.getInstance().getConfig().getString("messages.enabled")));
                 
             }
 
