@@ -88,7 +88,7 @@ public class NightVisionCommand implements CommandExecutor {
                     API.giveNightVision(player, true);
                     player.sendMessage(CC.translate(NightVision.getInstance().getConfig().getString("messages.enabled")));
                 }
-                
+
             }
 
         }
